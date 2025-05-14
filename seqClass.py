@@ -24,7 +24,8 @@ else:
 if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
-    if re.search(args.motif, args.seq):
-        print("FOUND")
-    else:
-        print("NOT FOUND")
+      if args.motif in args.seq:
+      position = args.seq.find(args.motif) + 1
+      print(f"Motif '{args.motif}' was found at position {position} (main branch).")
+  else:
+      print(f"Motif '{args.motif}' is not found.”)
