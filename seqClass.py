@@ -41,10 +41,11 @@ else:
 
 
 # Motif Search if/when provided
-  if args.motif:
-    args.motif = args.motif.upper()  # Convert motif to uppercasey
+if args.motif:
+    args.motif = args.motif.upper()  # Convert motif to uppercase
     if args.motif in args.seq:
         position = args.seq.find(args.motif) + 1
         print(f"Motif '{args.motif}' was found at position {position}.")
     else:
         print(f"Motif '{args.motif}' is not found in the sequence.")
+
